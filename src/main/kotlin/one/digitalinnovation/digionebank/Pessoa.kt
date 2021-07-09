@@ -1,18 +1,16 @@
 package one.digitalinnovation.digionebank
 
-class Pessoa {
-    var nome: String = "Heitor"
-    var cpf: String = "421.988.213-02"
-    private set //somente o SET esta privado, não podendo ser atribuido nenhum valor para as propriedades
+open class Pessoa(
+    open val nome: String,
+    open val cpf: String
+)
 
-    constructor()
+    // var nome: String = "Heitor"
+    // var cpf: String = "421.988.213-02"
+    // private set //somente o SET esta privado, não podendo ser atribuido nenhum valor para as propriedades
 
-    fun pessoaInfo() = "Nome: $nome e CPF: $cpf"
-}
+    // constructor()
 
-fun main(){
-    val heitor = Pessoa()
+    // fun pessoaInfo() = "Nome: $nome e CPF: $cpf"
 
-    println(heitor.pessoaInfo())
 
-}
