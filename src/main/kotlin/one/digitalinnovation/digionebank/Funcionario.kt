@@ -1,12 +1,17 @@
 package one.digitalinnovation.digionebank
 
-import java.math.BigDecimal
-
 abstract class Funcionario(
     nome: String,
     cpf: String,
-    val salario: BigDecimal
+    val salario: Double
 ) : Pessoa(nome, cpf){
 
-    abstract  fun calcularAuxilio():
+    protected abstract fun calcularAuxilio() : Double
+
+    override fun toString(): String = """
+    nome: $nome
+    cpf: $cpf
+    salario: $salario
+    auxilio: ${calcularAuxilio()}
+    """.trimIndent()
 }
